@@ -11,6 +11,7 @@ export default async function Home() {
   return (
     <code>
       <pre>{JSON.stringify(await data.text(), null, 2)}</pre>
+      <pre>Response date: {data.headers.get('date')}</pre>
     </code>
   );
 }
