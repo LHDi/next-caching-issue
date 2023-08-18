@@ -5,7 +5,7 @@ export const runtime = 'edge';
 export default async function Home() {
   const data = await fetch('https://hub.dummyapis.com/delay?seconds=5', {
     //  cache: 'force-cache',
-    next: { revalidate: 1 },
+    next: { revalidate: 60 },
   });
   const foo = cookies().get('foo');
   return (
