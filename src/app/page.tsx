@@ -1,12 +1,10 @@
+import { getResponse } from '@/utils/api';
 import { cookies } from 'next/headers';
 
 export const runtime = 'edge';
 
 export default async function Home() {
-  const data = await fetch('https://hub.dummyapis.com/delay?seconds=5', {
-    //  cache: 'force-cache',
-    // next: { revalidate: 60 },
-  });
+  const data = await getResponse();
   const foo = cookies().get('foo');
   return (
     <code>
